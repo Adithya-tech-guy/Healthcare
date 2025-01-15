@@ -30,12 +30,12 @@ pipeline{
         }
         stage('run dockerfile'){
           steps{
-               sh 'docker build -t myimg1 .'
+               sh 'docker build -t healthcare-adithya .'
            }
          }
         stage('port expose'){
             steps{
-                sh 'docker run -dt -p 8082:8082 --name c001 myimg1'
+                sh 'docker run -dt -p 8082:8082 --name c001 healthcare-adithya'
             }
         }   
     }
